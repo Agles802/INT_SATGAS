@@ -1,0 +1,117 @@
+CREATE TABLE Roles (
+  id_rol NUMBER PRIMARY KEY,
+  nombre_rol VARCHAR2(50)
+);
+ALTER TABLE Roles MODIFY id_rol NOT NULL;
+describe Roles;
+
+CREATE TABLE Usuarios (
+  id_usuario NUMBER PRIMARY KEY,
+  nombre_usuario VARCHAR2(50),
+  contraseña VARCHAR2(50),
+  id_rol NUMBER,
+  FOREIGN KEY (id_rol) REFERENCES Roles (id_rol)
+);
+ALTER TABLE Usuarios MODIFY id_usuario NOT NULL;
+describe Usuarios;
+
+CREATE TABLE Equipo (
+  id_equipo NUMBER PRIMARY KEY,
+  nombre_dueño VARCHAR2(30),
+  nombre_delegado VARCHAR2(30),
+  num_jugadores NUMBER
+);
+ALTER TABLE Equipo MODIFY id_equipo NOT NULL;
+describe Equipo;
+
+CREATE TABLE Jugador (
+  id_jugador NUMBER PRIMARY KEY,
+  nombre VARCHAR2(30),
+  edad NUMBER,
+  fecha_nacimiento DATE,
+  num_jugador NUMBER,
+  id_equipo NUMBER,
+  FOREIGN KEY (id_equipo) REFERENCES Equipo (id_equipo)
+);
+ALTER TABLE Jugador MODIFY id_jugador NOT NULL;
+ALTER TABLE Jugador MODIFY id_equipo NOT NULL;
+describe Jugador;
+
+CREATE TABLE Estadisticas (
+  id_jugador NUMBER,
+  num_goles NUMBER,
+  tarjetas_amarillas NUMBER,
+  tarjetas_rojas NUMBER,
+  FOREIGN KEY (id_jugador) REFERENCES Jugador (id_jugador)
+);
+ALTER TABLE Estadisticas MODIFY id_jugador NOT NULL;
+describe Estadisticas;
+
+CREATE TABLE Partido (
+  num_partido NUMBER PRIMARY KEY,
+  id_equipo1 NUMBER,
+  id_equipo2 NUMBER,
+  hora TIMESTAMP,
+  nombre_cancha VARCHAR2(30),
+  direccion_cancha VARCHAR2(50),
+  id_ganador NUMBER,
+  FOREIGN KEY (id_equipo1) REFERENCES Equipo (id_equipo),
+  FOREIGN KEY (id_equipo2) REFERENCES Equipo (id_equipo),
+  FOREIGN KEY (id_ganador) REFERENCES Equipo (id_equipo)
+);
+ALTER TABLE Partido MODIFY num_partido NOT NULL;
+ALTER TABLE Partido MODIFY id_equipo1 NOT NULL;
+ALTER TABLE Partido MODIFY id_equipo2 NOT NULL;
+ALTER TABLE Partido MODIFY id_ganador NOT NULL;
+describe Partido;
+
+CREATE TABLE EstadisticasEquipo (
+  id_equipo NUMBER,
+  partidos_ganados NUMBER,
+  partidos_perdidos NUMBER,
+  FOREIGN KEY (id_equipo) REFERENCES Equipo (id_equipo)
+);
+ALTER TABLE EstadisticasEquipo MODIFY id_equipo NOT NULL;
+describe EstadisticasEquipo;
+---Usuarios
+INSERT INTO Roles (id_rol, nombre_rol)
+VALUES (1, 'Administrador');
+
+INSERT INTO Usuarios (id_usuario, nombre_usuario, contraseña, id_rol)
+VALUES (1, 'admin', 'contraseña', 1);
+--equipo
+INSERT INTO Equipo (id_equipo, nombre_dueño, nombre_delegado, num_jugadores)
+VALUES (1, 'Dueño1', 'Delegado1', 11);
+
+INSERT INTO Equipo (id_equipo, nombre_dueño, nombre_delegado, num_jugadores)
+VALUES (2, 'Dueño2', 'Delegado2', 11);
+
+select * from equipo;
+----jugadores
+INSERT INTO Jugador (id_jugador, nombre, edad, fecha_nacimiento, num_jugador, id_equipo)
+VALUES (1, 'Jugador1', 25, TO_DATE('1998-05-10', 'YYYY-MM-DD'), 10, 1);
+
+
+INSERT INTO Jugador (id_jugador, nombre, edad, fecha_nacimiento, num_jugador, id_equipo)
+VALUES (2, 'Jugador2', 25, TO_DATE('1998-05-10', 'YYYY-MM-DD'), 10, 2);
+SELECT * from Jugador;
+----EstadisticaJugador
+INSERT INTO Estadisticas (id_jugador, num_goles, tarjetas_amarillas, tarjetas_rojas)
+VALUES (1, 5, 2, 0);
+
+INSERT INTO Estadisticas (id_jugador, num_goles, tarjetas_amarillas, tarjetas_rojas)
+VALUES (2, 4, 2, 0);
+---Partidos
+INSERT INTO Partido (num_partido, id_equipo1, id_equipo2, hora, nombre_cancha, direccion_cancha, id_ganador)
+VALUES (1, 1, 2, TIMESTAMP '2023-06-11 14:00:00', 'Cancha1', 'Dirección1', 1);
+---EstadisticasEquipo
+INSERT INTO EstadisticasEquipo (id_equipo, partidos_ganados, partidos_perdidos)
+VALUES (1, 3, 1);
+
+create or replace view EstadisticasTarjetas as
+SELECT Jugador.nombre, Estadisticas.num_goles,Estadisticas.TARJETAS_AMARILLAS, Estadisticas.TARJETAS_ROJAS
+FROM Jugador 
+JOIN Estadisticas ON Jugador.id_jugador = Estadisticas.id_jugador;
+
+
+select * from ESTADISTICASTARJETAS;
