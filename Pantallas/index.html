@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+   
+    <div class="imagen">
+        <h1>Sistema de Administración de <br>Torneos Galaxy Soccer</h1>
+        <img src="images/cancha.jpg" alt="Galaxy Soccer" class="cancha">
+        <input type="submit" value="Invitado">
+
+    </div>
+
+    <div class="container">
+        <div class="form signup">
+            <h2>Registrarse</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <i class="fa-regular fa-user"></i>
+                <span>Nombre de Usuario</span>
+            </div>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Correo Electrónico</span>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <i class="fa-solid fa-lock"></i>
+                <span>Crear contraseña</span>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <i class="fa-solid fa-lock"></i>
+                <span>Confirmar Contraseña</span>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Crear cuenta">
+            </div>
+            <p>¿Ya tienes cuenta? <a href="#" class="login">
+                Inicia Sesión</a></p>
+        </div>
+
+        <div class="form signin">
+            <h2>Iniciar Sesión</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <i class="fa-regular fa-user"></i>
+                <span>Nombre de Usuario</span>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <i class="fa-solid fa-lock"></i>
+                <span>Ingresar contraseña</span>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Iniciar sesión" onclick="irHome()">
+            </div>
+            <p>¿No tienes cuenta? <a href="#" class="create">
+                Crea una cuenta</a></p>
+        </div>
+    </div>
+
+    <script>
+       let login = document.querySelector('.login');
+       let create = document.querySelector('.create');
+       let container = document.querySelector('.container');
+
+       login.onclick = function(){
+           container.classList.add('signinForm');
+       }
+       create.onclick = function(){
+           container.classList.remove('signinForm');
+       }
+
+       function irHome() {
+  window.location.href = "pages/home.html";
+    }
+    </script>
+
+</body>
+</html>
