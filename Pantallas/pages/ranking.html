@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="../css/paginas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/estilotabs.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js
+    "></script>
+    <script src="../js/tabs.js"></script>
+</head>
+<body>
+  
+  <header>
+    <a href="#" class="logo">Galaxy Soccer</a>
+
+    <nav>
+      <a href="home.html">Inicio</a>
+      <a href="partidos.html">Partidos</a>
+      <a href="equipos.html">Equipos</a>
+      <a href="ranking.html" class="active2">Ranking</a>
+    </nav>
+  </header>
+
+
+  <div class="wrap">
+    <ul class="tabs">
+        <li><a href="#tab2">
+            <i class="fa-solid fa-people-group"></i>                
+            <span class="tab-text">Ranking de Equipos</span>
+        </a></li>
+        <li><a href="#tab3">
+            <i class="fa-solid fa-futbol"></i>
+            <span class="tab-text">Ranking Goles</span>
+        </a></li>
+        <li><a href="#tab4">
+            <i class="fa-solid fa-x"></i>
+            <span class="tab-text">Jugadores Penalizados</span>
+        </a></li>
+        <li><a href="#tab5">
+          <i class="fa-solid fa-x"></i>
+          <span class="tab-text">Horarios Partidos</span>
+      </a></li>
+    </ul>
+
+    <div class="secciones">
+        <article id="tab2">
+            <h1>Ranking de Equipos</h1>
+            <table class="tabla">
+                <thead>
+                  <tr>
+                    <th>Equipos</th>
+                    <th>Puntos</th>
+                    <th>Partidos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Equipo 1</td>
+                    <td>25</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Equipo 2</td>
+                    <td>23</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>Equipo 3</td>
+                    <td>18</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>Equipo 4</td>
+                    <td>16</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Equipo 5</td>
+                    <td>12</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>Equipo 6</td>
+                    <td>10</td>
+                    <td>5</td>
+                  </tr>
+                </tbody>
+              </table>
+        </article>
+
+
+        <article id="tab3">
+            <h1>Ranking de goles por jugador</h1>
+            <table class="tabla">
+                <thead>
+                  <tr>
+                    <th>Jugador</th>
+                    <th>Equipo</th>
+                    <th>Goles</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Jugador 1</td>
+                    <td>Equipo 1</td>
+                    <td>30</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 2</td>
+                    <td>Equipo 2</td>
+                    <td>25</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 3</td>
+                    <td>Equipo 3</td>
+                    <td>22</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 4</td>
+                    <td>Equipo 4</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 5</td>
+                    <td>Equipo 5</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 6</td>
+                    <td>Equipo 6</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 7</td>
+                    <td>Equipo 7</td>
+                    <td>14</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 8</td>
+                    <td>Equipo 8</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 9</td>
+                    <td>Equipo 9</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>Jugador 10</td>
+                    <td>Equipo 10</td>
+                    <td>8</td>
+                  </tr>
+                </tbody>
+              </table>              
+        </article>
+
+        <article id="tab4">
+            <h1>Jugadores Penalizados</h1>
+            <div style="display: flex;">
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th>Tarjetas Amarillas</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jugador 1 (Equipo 1)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador 2 (Equipo 2)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador 3 (Equipo 3)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador 4 (Equipo 4)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador 5 (Equipo 5)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th>Tarjetas Rojas</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jugador A (Equipo A)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador B (Equipo B)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador C (Equipo C)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador D (Equipo D)</td>
+                    </tr>
+                    <tr>
+                      <td>Jugador E (Equipo E)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+        </article>
+
+        <article id="tab5">
+            <h1>Horarios</h1>
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th>Partido</th>
+                  <th>Día de Juego</th> 
+                  <th>Horario</th> 
+                  <th>Cancha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Equipo 1 vs Equipo 2</td>
+                  <td>Domingo 1</td>
+                  <td>8:00</td>
+                  <td>Cancha 2</td>
+                </tr>
+                <tr>
+                  <td>Equipo A vs Equipo B</td>
+                  <td>Domingo 2</td>
+                  <td>9:30</td>
+                  <td>Cancha 1</td>
+                </tr>
+                <tr>
+                  <td>Equipo X vs Equipo Y</td>
+                  <td>Domingo 3</td>
+                  <td>11:15</td>
+                  <td>Cancha 1</td>
+                </tr>
+                <tr>
+                  <td>Equipo M vs Equipo N</td>
+                  <td>Domingo 4</td>
+                  <td>14:00</td>
+                  <td>Cancha 2</td>
+                </tr>
+              </tbody>
+            </table>
+            
+        </article>
+    </div>
+</div>
+
+</body>
+</html>

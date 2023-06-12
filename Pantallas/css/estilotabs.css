@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #4E25AB ;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrap{
+    width: 90%;
+    margin: 30px auto;
+    margin-top: 6%;
+}
+
+ul.tabs{
+    width: 100%;
+    background-color: #03B5AA;
+    list-style: none;
+    display: flex;
+}
+
+ul.tabs li{
+    width: 100%;
+
+}
+
+ul.tabs li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+
+    display: block;
+    padding: 20px 0px;
+}
+
+.active{
+    background: #D81159;
+}
+
+ul.tabs li a .tab-text{
+    margin-left: 8px;
+}
+
+.secciones{
+    width: 100%;
+    background: #999AC6;
+}
+
+.secciones article{
+    padding: 30px;
+}
+
+.secciones article h1{
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.secciones article p{
+    text-align: justify;
+}   
+
+@media screen and (max-width: 700px){
+    ul.tabs li{
+        width: none;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 450px){
+    ul.tabs li a{
+        padding: 15px 0px;
+        
+    }
+    ul.tabs li a .tab-text{
+        display: none;
+    }
+
+    .secciones article{
+        padding: 20px;
+    }
+}
+
+.tabla{
+    background: #F1E4F3;
+    width: 95%;
+    border: 1px solid black;
+}
+
+.tabla thead{
+    background: #D81159;
+    padding: 15px 15px;
+    margin-right: 20px;
+}
+
+.tabla tbody{
+    background: #F1E4F3;
+    padding: 15px 15px;
+    margin-right: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.tabla thead th {
+    background: #D81159;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .tabla tbody td {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+.tabla tbody tr:nth-child(even){
+    background: #F8D7DA;
+}
+
+.tabla tbody tr:nth-child(odd){
+    background: #F1E4F3;
+}
+
+.tabla tbody tr:hover{
+    background: #999AC6;
+    color: white;
+}
+
+.tabla tbody tr td{
+    padding: 15px 15px;
+    margin-right: 20px;
+}
+
+.tabla tbody tr td a{
+    color: black;
+    text-decoration: none;
+}
+
+.tabla tbody tr td a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+
